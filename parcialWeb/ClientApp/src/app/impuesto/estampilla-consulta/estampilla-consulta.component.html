@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-6">
+        <input [(ngModel)]="searchText" type="text" class="form-control" placeh older="Type to filter">
+    </div>
+</div>
+
+<hr>
+
+<table class="table table-striped" *ngIf='estampillas && estampillas.length'>
+
+    <thead>
+        <tr>
+            <th scope="col">numero de contrato </th>
+            <th scope="col">objeto del contrato </th>
+            <th scope="col">valor del contrato </th>
+            <th scope="col">apoya emergencia covid-19</th>
+            <th scope="col">valor estampilla</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let estampilla of estampillas; index as i ">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ estampilla.nContrato }} </td>
+            <td>{{ estampilla.objContrato }}</td>
+            <td>{{ estampilla.vContrato }}</td>
+            <td>{{ estampilla.apoyaCovid19 }}</td>
+            <td>{{ estampilla.vEstampilla }}</td>
+        </tr>
+    </tbody>
+</table>
